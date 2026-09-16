@@ -1,0 +1,10 @@
+/assets/*
+  Cache-Control: public, max-age=604800, immutable
+
+/assets/fonts/*
+  Content-Type: font/woff2
+  Cache-Control: public, max-age=604800, immutable
+
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin

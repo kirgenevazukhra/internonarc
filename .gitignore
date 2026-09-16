@@ -1,0 +1,13 @@
+# working material, not part of the published site
+meme/
+.impeccable/
+status.md
+PRODUCT.md
+DESIGN.md
+
+# local noise
+node_modules/
+package.json
+package-lock.json
+.DS_Store
+Thumbs.db
