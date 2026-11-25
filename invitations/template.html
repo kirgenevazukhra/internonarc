@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="{{lang}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{{og_title}}</title>
+<meta name="description" content="{{og_description}}">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="{{color_primary}}">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{og_title}}">
+<meta property="og:description" content="{{og_description}}">
+<meta property="og:url" content="{{og_url}}">
+<meta property="og:image" content="{{og_image}}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{{og_image_alt}}">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../assets/shared/fonts/cormorant-garamond-cyrillic-500-italic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/shared/fonts/cormorant-garamond-cyrillic-ext-500-italic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/shared/fonts/cormorant-garamond-latin-500-italic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/shared/fonts/fonts.css">
+<link rel="stylesheet" href="../css/style.css">
+<style>:root{--c-primary:{{color_primary}};--c-bg:{{color_background}};--c-accent:{{color_accent}};--c-text:{{color_text}};--c-muted:{{color_muted}}}</style>
+<script id="event-config" type="application/json">{{config_json}}</script>
+<script type="module" src="../js/main.js"></script>
+</head>
+<body class="is-locked">
+
+<!-- SVG-библиотека декора (используется через <use>) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="sprig" viewBox="0 0 120 40">
+      <path d="M2 20 C 30 18, 60 22, 118 20" fill="none" stroke="currentColor" stroke-width=".8"/>
+      <g fill="none" stroke="currentColor" stroke-width=".7">
+        <path d="M20 20 C 22 12, 30 9, 34 10 C 31 15, 26 19, 20 20Z"/>
+        <path d="M30 20 C 33 28, 41 31, 45 30 C 42 25, 36 21, 30 20Z"/>
+        <path d="M44 20 C 47 11, 56 8, 60 9 C 57 15, 51 19, 44 20Z"/>
+        <path d="M56 20 C 59 29, 68 32, 72 31 C 69 26, 62 21, 56 20Z"/>
+        <path d="M70 20 C 73 13, 80 10, 84 11 C 81 16, 76 19, 70 20Z"/>
+        <path d="M82 20 C 85 27, 91 29, 95 28 C 92 24, 87 21, 82 20Z"/>
+      </g>
+      <circle cx="106" cy="17" r="1.6" fill="currentColor"/><circle cx="111" cy="22" r="1.2" fill="currentColor"/>
+    </symbol>
+    <symbol id="ornament" viewBox="0 0 200 24">
+      <path d="M0 12 H80 M120 12 H200" stroke="currentColor" stroke-width=".7"/>
+      <path d="M100 2 L108 12 L100 22 L92 12 Z" fill="none" stroke="currentColor" stroke-width=".8"/>
+      <circle cx="100" cy="12" r="2" fill="currentColor"/>
+      <circle cx="84" cy="12" r="1.3" fill="currentColor"/><circle cx="116" cy="12" r="1.3" fill="currentColor"/>
+    </symbol>
+    <symbol id="i-guests" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><circle cx="17" cy="16" r="5"/><circle cx="31" cy="16" r="5"/><path d="M8 36c1-7 5-11 9-11s7 3 8 6M23 31c1-3 4-6 8-6s8 4 9 11"/></g></symbol>
+    <symbol id="i-rings" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="19" cy="28" r="9"/><circle cx="30" cy="28" r="9"/><path d="M27 13l3-4 3 4-3 4z"/></g></symbol>
+    <symbol id="i-dombra" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M16 40c-6-4-5-14 2-16s13 4 10 11-8 8-12 5z"/><path d="M24 26L38 8M36 6l4 4"/><path d="M19 31l2 2"/></g></symbol>
+    <symbol id="i-cake" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M10 40h28M12 40V30h24v10M15 30v-8h18v8M18 22v-6h12v6"/><path d="M24 16v-4M24 9c-1-1-1-2 0-3 1 1 1 2 0 3z"/><path d="M12 34c3 2 5 2 8 0s5-2 8 0 5 2 8 0"/></g></symbol>
+    <symbol id="i-star" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M24 8v8M24 32v8M8 24h8M32 24h8M13 13l5 5M30 30l5 5M35 13l-5 5M18 30l-5 5"/><circle cx="24" cy="24" r="3"/></g></symbol>
+  </defs>
+</svg>
+
+<!-- 1. Конверт -->
+<div class="intro" id="intro">
+  <button class="envelope" id="envelope" type="button" aria-label="">
+    <span class="envelope__back"></span>
+    <span class="envelope__card"><svg class="envelope__card-orn"><use href="#ornament"/></svg></span>
+    <span class="envelope__pocket"></span>
+    <span class="envelope__flap"></span>
+    <span class="seal" aria-hidden="true">
+      <svg viewBox="0 0 100 100" class="seal__svg">
+        <defs>
+          <radialGradient id="wax" cx="40%" cy="35%" r="70%">
+            <stop offset="0" stop-color="#d9bd84"/><stop offset=".55" stop-color="#b8955a"/><stop offset="1" stop-color="#8a6a36"/>
+          </radialGradient>
+        </defs>
+        <path fill="url(#wax)" d="M50 4c8 0 10 5 17 7s12 0 16 6 0 11 3 17 8 9 8 16-5 10-8 16 1 12-3 17-9 4-16 6-9 7-17 7-10-5-17-7-12 0-16-6 0-11-3-17-8-9-8-16 5-10 8-16-1-12 3-17 9-4 16-6 9-7 17-7z"/>
+        <circle cx="50" cy="50" r="30" fill="none" stroke="#7a5c2c" stroke-width="1.2" opacity=".6"/>
+        <circle cx="50" cy="50" r="33" fill="none" stroke="#f3e2bd" stroke-width=".6" opacity=".5"/>
+        <text x="50" y="58" text-anchor="middle" class="seal__text" data-monogram></text>
+      </svg>
+    </span>
+  </button>
+  <p class="intro__hint" data-t="open_hint"></p>
+</div>
+
+<!-- Управление -->
+<div class="controls" id="controls" hidden>
+  <button class="sound" id="sound" type="button" aria-pressed="false">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path class="sound__note" d="M9 18V6l10-2v12" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="7" cy="18" r="2" fill="currentColor"/><circle cx="17" cy="16" r="2" fill="currentColor"/><path class="sound__off" d="M4 4l16 16" stroke="currentColor" stroke-width="1.5"/></svg>
+  </button>
+</div>
+
+<main class="page" id="page" aria-hidden="true">
+
+  <!-- 2. Главный экран -->
+  <section class="hero">
+    <div class="lang" id="lang" role="group" aria-label="Тіл / Язык"></div>
+    <svg class="sprig sprig--tl" aria-hidden="true"><use href="#sprig"/></svg>
+    <svg class="sprig sprig--br" aria-hidden="true"><use href="#sprig"/></svg>
+    <p class="eyebrow" data-reveal data-t="invitation_label"></p>
+    <div class="monogram" data-reveal aria-hidden="true" data-monogram></div>
+    <h1 class="names" data-reveal>
+      <span class="names__one" data-name="groom"></span>
+      <span class="names__amp">&amp;</span>
+      <span class="names__two" data-name="bride"></span>
+    </h1>
+    <svg class="orn" data-reveal aria-hidden="true"><use href="#ornament"/></svg>
+    <p class="hero__date" data-reveal data-date-short></p>
+  </section>
+
+  <!-- 3. Обращение -->
+  <section class="address">
+    <div class="arch" data-reveal>
+      <p class="arch__greeting" data-greeting></p>
+      <p class="arch__text" data-t="invitation"></p>
+      <svg class="arch__orn" aria-hidden="true"><use href="#ornament"/></svg>
+    </div>
+  </section>
+
+  <!-- 4. Календарь -->
+  <section class="calendar" data-section="calendar">
+    <h2 class="h2" data-reveal data-t="calendar_title"></h2>
+    <div class="cal" data-reveal>
+      <div class="cal__head"><span data-cal-month></span><span data-cal-year></span></div>
+      <div class="cal__grid" data-cal-grid role="grid"></div>
+    </div>
+  </section>
+
+  <!-- 5. Отсчёт -->
+  <section class="countdown" data-section="countdown">
+    <h2 class="h2" data-reveal data-t="countdown_title"></h2>
+    <div class="cd" data-reveal data-countdown aria-live="off"></div>
+  </section>
+
+  <!-- 6. Программа -->
+  <section class="program" data-section="program">
+    <h2 class="h2" data-reveal data-t="program_title"></h2>
+    <div class="tl" data-timeline>
+      <svg class="tl__line" aria-hidden="true" preserveAspectRatio="none"><path data-tl-path/></svg>
+      <ol class="tl__list" data-tl-list></ol>
+    </div>
+  </section>
+
+  <!-- 7. Место -->
+  <section class="venue" data-section="venue">
+    <h2 class="h2" data-reveal data-t="venue_title"></h2>
+    <svg class="venue__pin" data-reveal viewBox="0 0 40 52" aria-hidden="true"><path d="M20 50S4 30 4 19a16 16 0 0 1 32 0c0 11-16 31-16 31z" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M20 26c-4-3-7-5-7-8a3.5 3.5 0 0 1 7-1 3.5 3.5 0 0 1 7 1c0 3-3 5-7 8z" fill="currentColor"/></svg>
+    <p class="venue__name" data-reveal data-venue-name></p>
+    <p class="venue__type" data-reveal data-venue-type></p>
+    <p class="venue__addr" data-reveal data-venue-address></p>
+    <div class="venue__btns" data-reveal>
+      <a class="btn" data-link-2gis target="_blank" rel="noopener" data-t="btn_2gis"></a>
+      <a class="btn btn--ghost" data-link-google target="_blank" rel="noopener" data-t="btn_google"></a>
+    </div>
+  </section>
+
+  <!-- 8. Дресс-код -->
+  <section class="dress" data-section="dress_code">
+    <h2 class="h2" data-reveal data-t="dress_title"></h2>
+    <p class="muted" data-reveal data-t="dress_text"></p>
+    <div class="dress__colors" data-reveal data-dress-colors></div>
+  </section>
+
+  <!-- 9. Подпись хозяев -->
+  <section class="hosts" data-section="hosts">
+    <p class="hosts__title" data-reveal data-t="hosts_title"></p>
+    <p class="muted" data-reveal data-t="hosts_label"></p>
+    <p class="hosts__names" data-reveal data-hosts></p>
+  </section>
+
+  <!-- 10. Анкета -->
+  <section class="rsvp" data-section="rsvp" id="rsvp">
+    <div class="rsvp__inner">
+      <h2 class="rsvp__title" data-reveal data-t="rsvp_title"></h2>
+      <p class="rsvp__sub" data-reveal data-rsvp-sub></p>
+      <form class="form" id="rsvp-form" novalidate data-reveal>
+        <label class="field">
+          <span class="field__label" data-t="rsvp_name"></span>
+          <input class="field__input" name="name" autocomplete="name" maxlength="80" required>
+        </label>
+        <fieldset class="field options" data-options>
+          <legend class="visually-hidden" data-t="rsvp_title"></legend>
+        </fieldset>
+        <label class="field" data-guests-field>
+          <span class="field__label" data-t="rsvp_guests"></span>
+          <select class="field__input" name="guests" data-guests></select>
+        </label>
+        <label class="field">
+          <span class="field__label" data-t="rsvp_wish"></span>
+          <textarea class="field__input" name="wish" rows="2" maxlength="500"></textarea>
+        </label>
+        <!-- ловушка для ботов: люди это поле не видят -->
+        <label class="hp" aria-hidden="true">Website <input name="website" tabindex="-1" autocomplete="off"></label>
+        <p class="form__msg" data-form-msg role="status" aria-live="polite"></p>
+        <button class="btn btn--light form__submit" type="submit" data-submit></button>
+      </form>
+    </div>
+  </section>
+
+  <!-- 11. Финал -->
+  <footer class="final">
+    <div class="monogram monogram--small" data-reveal aria-hidden="true" data-monogram></div>
+    <p class="final__text" data-reveal data-t="final"></p>
+    <svg class="orn" aria-hidden="true"><use href="#ornament"/></svg>
+    <p class="credit">made with ♡</p>
+  </footer>
+</main>
+
+<audio id="music" preload="none" loop src="{{music}}"></audio>
+<noscript><p style="padding:2rem;text-align:center">{{og_title}} — {{og_description}}</p></noscript>
+</body>
+</html>
